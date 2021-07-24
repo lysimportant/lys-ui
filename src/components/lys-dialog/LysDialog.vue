@@ -2,9 +2,9 @@
   <div class="container">
     <!-- transition是vue的动画封装组件 -->
     <transition name="dialog-fade">
-      <!-- v-show 只是简单地切换元素的 CSS property display -->
+      <!-- 遮罩层 -->
       <!-- .self代表只有点到自己才会触发 -->
-      <div class="lys-dialog_wrapper" v-show="visible" @click.self="close">
+      <div class="lys-dialog_wrapper" v-show="visible" @click.self="handleClose">
         <div class="lys-dialog" :style="{width, marginTop: top}">
           <!--    头部   -->
           <div class="lys-dialog_header">
@@ -13,11 +13,11 @@
               <span class="lys-dialog_title">{{ title }}</span>
             </slot>
             <!--   关闭按钮-->
-            <button class="lys-dialog_headerbtn" @click="close">
+            <button class="lys-dialog_headerbtn" @click="handleClose">
               <i class="lys-icon-close"></i>
             </button>
           </div>
-          <!--   信息       -->
+          <!--   信息   -->
           <div class="lys-dialog_body">
             <slot><span>这是一段内容信息</span></slot>
           </div>
@@ -53,8 +53,10 @@ export default {
     }
   },
   methods: {
-    close () {
-      this.visible = false
+    handleClose () {
+      // this.visible = false
+      // update:数据名 的方法名用于sync修饰符的处理,第二个参数是数据update的具体数据
+      // .sync修饰符的值作用: 当父子组件需要绑定一个值并修改时 不需要父组件绑定子组件事件就可以赋值 需名字相同
       this.$emit('update:visible', false)
     }
   }
@@ -62,83 +64,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.lys-dialog_wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  margin: 0;
-  z-index: 2001;
-  background-color: rgba(0,0,0,0.5);
-  .lys-dialog {
-    position: relative;
-    // 1vh等于视口高度的1%
-    margin: 15vh auto 50px;
-    background: #fff;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    box-sizing: border-box;
-    width: 30%;
-    &_header {
-      padding: 20px 20px 10px;
-      .lys-dialog_title {
-        line-height: 24px;
-        font-size: 18px;
-        color: #303133;
-      }
-      .lys-dialog_headerbtn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        padding: 0;
-        background: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        font-size: 16px;
-        .lys-icon-close{
-          color: #909399
-        }
-      }
-    }
-    &_body {
-      padding: 30px 20px;
-      color: #606266;
-      font-size: 14px;
-      // 允许在单词内换行
-      word-break: break-all;
-    }
-    &_footer{
-      padding: 10px 20px 20px;
-      text-align: right;
-      box-sizing: border-box;
-      // 深度作用选择器，解决scope下后代选择器无法深度选择的问题
-      ::v-deep .lys-button:first-child{
-        margin-right: 20px;
-      }
-    }
-  }
-}
-@keyframes display {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -30%, 0);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translate3d(0, -20%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-.dialog-fade-enter-active {
-  animation: display 0.3s;
-}
-.dialog-fade-leave-active {
-  animation: display 0.3s reverse;
-}
+@import './index.scss';
 </style>

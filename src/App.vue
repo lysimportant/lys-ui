@@ -49,8 +49,8 @@
       -->
 <!--  dialog-->
     <div class="dialog">
-      <lys-button @click="ShowVisibel = true">显示Dialog</lys-button>
-      <lys-dialog title="梦醒提示" width="80%" top="50px" :visible.sync="ShowVisibel">
+      <lys-button @click="visible = true">显示Dialog</lys-button>
+      <lys-dialog title="梦醒提示" width="80%" top="50px" :visible.sync="visible">
         <ul>
           <li>1</li>
           <li>1</li>
@@ -58,10 +58,12 @@
         </ul>
         <template v-slot:footer>
           <lys-button type="info" size="mini">取消</lys-button>
-          <lys-button type="primary">确定</lys-button>
+          <lys-button type="primary" size="small">确定</lys-button>
         </template>
       </lys-dialog>
     </div>
+    <!-- :visible="visible" -->
+    <!-- <demo :visible="visible" :money="money" @update:aa="fn2"/> -->
   </div>
 </template>
 
@@ -70,10 +72,9 @@ export default {
   name: 'App',
   data () {
     return {
-      ShowVisibel: false
+      visible: false,
+      money: 100
     }
-  },
-  components: {
   },
   methods: {
     click () {
@@ -84,13 +85,6 @@ export default {
 </script>
 
 <style lang="scss">
-.row {
-  width: 60%;
-  margin: 50px auto;
-  .lys-button {
-    margin: 1px 10px!important;
-  }
-}
 [class *=lys-icon-] {
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -98,5 +92,4 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 </style>
