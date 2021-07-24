@@ -20,7 +20,13 @@
 | title   | 标题               | String  |          |        |
 | width   | 宽度               | String  |          | 50%    |
 | top     | 顶部距离           | String  |          |        |
-
+## Input
+| 参数          | 说明             | 类型    | 可选参数         | 默认值 |
+| ------------- | ---------------- | ------- | ---------------- | ------ |
+| clearable     | 清空值           | Boolean |                  | fasle  |
+| type          | input类型        | String  | text/password... | text   |
+| show-password | 密码框的显示切换 | Boolean |                  | fasle  |
+| disabled      | 禁用             | Boolean |                  | false  |
 
 
 ## Project setup
