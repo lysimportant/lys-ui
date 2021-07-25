@@ -1,0 +1,23 @@
+# 忽略文件
+examples/
+packages/
+public/
+node_modules/
+
+# 忽略指定文件
+vue.config.js
+babel.config.js
+*.map
+# Editor directories and files
+.idea
+.browserslistrc
+.editorconfig
+.eslintrc.js
+.vscode
+.prettierrc
+.yarnrc
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,5 +1,13 @@
-# lys-ui
+# lys-ui 下载
+> npm i lys-ui  下载框架
+## 引入
+```
+import LysUI fomr 'lys-ui'  // 引入 lys-ui
 
+import 'lys-ui/dist/lys-ui.css' // 引入样式
+
+Vue.use(LysUI) // 全局使用
+```
 ## Button
 
 | 参数     | 说明         | 类型    | 可选值                                    | 默认值  |
@@ -27,6 +35,12 @@
 | type          | input类型        | String  | text/password... | text   |
 | show-password | 密码框的显示切换 | Boolean |                  | fasle  |
 | disabled      | 禁用             | Boolean |                  | false  |
+
+## Switch
+| 参数          | 说明                 | 类型   | 可选参数 | 默认值 |
+| ------------- | -------------------- | ------ | -------- | ------ |
+| activeColor   | 活跃状态的颜色/true  | String |          |        |
+| inactiveColor | 原始状态的颜色/fasle | String |          |        |
 
 
 ## Project setup

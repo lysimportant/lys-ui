@@ -1,11 +1,19 @@
 {
   "name": "lys-ui",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
+  "main": "dist/lys-ui.umd.min.js",
+  "author": {
+    "name": "Lys",
+    "email": "lysimportant@outlook.com",
+    "url": "https://lianghj.top"
+  },
+  "description": "练习自用ui库",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",

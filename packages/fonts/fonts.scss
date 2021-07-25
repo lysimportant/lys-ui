@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2696995 */
+  src: url('//at.alicdn.com/t/font_2696995_n09xsmcp5yr.eot?t=1627204942872'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_2696995_n09xsmcp5yr.eot?t=1627204942872#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('//at.alicdn.com/t/font_2696995_n09xsmcp5yr.woff2?t=1627204942872') format('woff2'),
+       url('//at.alicdn.com/t/font_2696995_n09xsmcp5yr.woff?t=1627204942872') format('woff'),
+       url('//at.alicdn.com/t/font_2696995_n09xsmcp5yr.ttf?t=1627204942872') format('truetype'),
+       url('//at.alicdn.com/t/font_2696995_n09xsmcp5yr.svg?t=1627204942872#iconfont') format('svg');
+}
+
+[class *=lys-icon-] {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lys-icon-clear-cirle:before {
+  content: "\e645";
+}
+
+.lys-icon-view:before {
+  content: "\e942";
+}
+
+.lys-icon-close:before {
+  content: "\e601";
+}
+
+.lys-icon-star-off:before {
+  content: "\e61f";
+}
+
+.lys-icon-search:before {
+  content: "\e60c";
+}
+
+.lys-icon-delete:before {
+  content: "\e615";
+}
+
+.lys-icon-edit:before {
+  content: "\e614";
+}
+
+.lys-icon-check:before {
+  content: "\e644";
+}
+
+.lys-icon-message:before {
+  content: "\e72b";
+}
